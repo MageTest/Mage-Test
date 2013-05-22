@@ -60,7 +60,7 @@ class MageTest_Bootstrap {
         Mage::reset();
         Mage::setRoot();
         $this->setProtectedProperty('_app', new MageTest_Core_Model_App());
-        $this->setProtectedProperty('_config', new Mage_Core_Model_Config($options));
+        $this->setProtectedProperty('_config', new MageTest_Core_Model_Config($options));
 
         if (!empty($modules)) {
             $this->getProtectedPropertyValue('_app')->initSpecified($code, $type, $options, $modules);
@@ -85,7 +85,7 @@ class MageTest_Bootstrap {
         Mage::setRoot();
         $this->setProtectedProperty('_app', new MageTest_Core_Model_App());
         $this->setProtectedProperty('_events', new Varien_Event_Collection);
-        $this->setProtectedProperty('_config', new Mage_Core_Model_Config($options));
+        $this->setProtectedProperty('_config', new MageTest_Core_Model_Config($options));
         $this->getProtectedPropertyValue('_app')->run(array(
             'scope_code' => $code,
             'scope_type' => $type,
@@ -111,13 +111,13 @@ class MageTest_Bootstrap {
             Mage::setRoot();
             $this->setProtectedProperty('_app', new MageTest_Core_Model_App());
             $this->setProtectedProperty('_events', new Varien_Event_Collection);
-            $this->setProtectedProperty('_config', new Mage_Core_Model_Config($options));
+            $this->setProtectedProperty('_config', new MageTest_Core_Model_Config($options));
 
             Varien_Profiler::start('self::app::init');
             $this->getProtectedPropertyValue('_app')->init($code, $type, $options);
             Varien_Profiler::stop('self::app::init');
             $this->getProtectedPropertyValue('_app')->loadAreaPart(
-                Mage_Core_Model_App_Area::AREA_GLOBAL, 
+                Mage_Core_Model_App_Area::AREA_GLOBAL,
                 Mage_Core_Model_App_Area::PART_EVENTS
             );
         }
