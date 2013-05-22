@@ -31,6 +31,7 @@ class MageTest_Core_Model_App extends Mage_Core_Model_App
      * Provide a public method to allow the internal Request object
      * to be set at runtime. This can be used to inject a testing request object
      *
+     * @param Zend_Controller_Request_Abstract $request
      * @return void
      * @author Alistair Stead
      **/
@@ -56,6 +57,7 @@ class MageTest_Core_Model_App extends Mage_Core_Model_App
      * Provide a public method to allow the protected internal Response object
      * to be set at runtime. This can be used to inject a testing response object
      *
+     * @param Zend_Controller_Response_Abstract $response
      * @return void
      * @author Alistair Stead
      **/
@@ -111,6 +113,8 @@ class MageTest_Core_Model_App extends Mage_Core_Model_App
      * fire during fixture loading
      *
      * @see Mage_Core_Model_App::dispatchEvent()
+     * @param string $eventName
+     * @param array $args
      * @return MageTest_Core_Model_App
      */
     public function dispatchEvent($eventName, $args)

@@ -4,6 +4,6 @@
         <directory suffix="Test.php">unit/app/code/core</directory>
     </testsuite>
     <listeners>
-        <listener class="MageTest_PhpUnit_Framework_TestListener"/>
+        <listener class="MageTest_PHPUnit_Framework_TestListener"/>
     </listeners>
 </phpunit>

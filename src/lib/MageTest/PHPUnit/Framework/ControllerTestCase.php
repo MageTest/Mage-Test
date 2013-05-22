@@ -84,6 +84,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * @param  string $name
      * @param  mixed $value
      * @return void
+     * @throws Zend_Exception
      */
     public function __set($name, $value)
     {
@@ -403,6 +404,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
     /**
      * Enable the Magento cache
      *
+     * @param $types
      * @return void
      * @author Alistair Stead
      **/
@@ -414,6 +416,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
     /**
      * Disable the Magento cache
      *
+     * @param $types
      * @return void
      * @author Alistair Stead
      **/
@@ -425,6 +428,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
     /**
      * Clear the Magento cache
      *
+     * @param $types
      * @return void
      * @author Alistair Stead
      **/
@@ -450,6 +454,9 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * Orginal values will be stores internally and then restored after
      * all tests have been run with resetConfig().
      *
+     * @param string $path
+     * @param mixed $value
+     * @param string $scope
      * @return void
      * @author Alistair Stead
      **/
@@ -465,6 +472,8 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * to no. Orginal values will be stores internally and then restored after
      * all tests have been run with resetConfig().
      *
+     * @param string $path
+     * @param string $scope
      * @return void
      * @author Alistair Stead
      **/

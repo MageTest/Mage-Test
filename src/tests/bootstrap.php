@@ -1,7 +1,9 @@
 <?php
 // Define path to application directory
+for ($i = 0, $d = '../'; ! file_exists($d.'app/Mage.php') && $i++ < 10; $d .= '../');
+
 defined('APPLICATION_PATH')
-    || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../app'));
+    || define('APPLICATION_PATH', realpath($d.'/app'));
 
 require_once APPLICATION_PATH.'/Mage.php';
 // Update setting so for correct behaviour under test
@@ -14,3 +16,6 @@ session_id(uniqid());
 $_SERVER['MAGE_TEST'] = true;
 // Standard Magento configuration
 $_SERVER['MAGE_IS_DEVELOPER_MODE'] = true;
+
+// Initialize Mage_Log in case of an exception during autoloading a class
+Zend_Log::INFO;
