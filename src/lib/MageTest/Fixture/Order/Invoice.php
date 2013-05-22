@@ -35,9 +35,9 @@ class MageTest_Fixture_Order_Invoice extends MageTest_Fixture
 
         $data = array_merge($_data, $data);
 
-        $customer = Mage::getModel('sales/order_invoice');
-        $customer->setData($data);
+        $invoice = Mage::getModel('sales/order_invoice');
+        $invoice->setData($data);
 
-        return $customer;
+        return $invoice;
     }
 }

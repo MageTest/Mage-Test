@@ -34,7 +34,6 @@ class MageTest_Bootstrap {
     /**
      * undocumented function
      *
-     * @return void
      * @author Alistair Stead
      **/
     public function __construct()
@@ -52,6 +51,10 @@ class MageTest_Bootstrap {
      * Then sets test case request and response objects in Mage_Core_App,
      * and disables returning the response.
      *
+     * @param string $code
+     * @param string $type
+     * @param array $options
+     * @param array $modules
      * @return void
      * @author Alistair Stead
      */
@@ -76,6 +79,9 @@ class MageTest_Bootstrap {
     /**
      * undocumented function
      *
+     * @param string $code
+     * @param string $type
+     * @param array $options
      * @return void
      * @author Alistair Stead
      **/
@@ -102,7 +108,10 @@ class MageTest_Bootstrap {
     /**
      * undocumented function
      *
-     * @return void
+     * @param string $code
+     * @param string $type
+     * @param array $options
+     * @return MageTest_Core_Model_App
      * @author Alistair Stead
      **/
     public function app($code = '', $type = 'store', $options = array())
@@ -141,7 +150,7 @@ class MageTest_Bootstrap {
     /**
      * undocumented function
      *
-     * @return void
+     * @return ReflectionClass
      * @author Alistair Stead
      **/
     public function getMageReflection()
@@ -155,7 +164,8 @@ class MageTest_Bootstrap {
     /**
      * undocumented function
      *
-     * @return void
+     * @param string $name
+     * @return ReflectionProperty
      * @author Alistair Stead
      **/
     public function getProtectedProperty($name)
@@ -168,7 +178,8 @@ class MageTest_Bootstrap {
     /**
      * undocumented function
      *
-     * @return void
+     * @param string $name
+     * @return mixed
      * @author Alistair Stead
      **/
     public function getProtectedPropertyValue($name)
@@ -179,6 +190,8 @@ class MageTest_Bootstrap {
     /**
      * undocumented function
      *
+     * @param string $name
+     * @param mixed $value
      * @return void
      * @author Alistair Stead
      **/
@@ -193,6 +206,7 @@ class MageTest_Bootstrap {
      *
      * @return boolean
      * @author Alistair Stead
+     * @throws DomainException
      **/
     public function isValid()
     {
