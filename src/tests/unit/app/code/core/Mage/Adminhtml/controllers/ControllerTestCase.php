@@ -96,7 +96,7 @@ class Mage_Adminhtml_ControllerTestCase extends MageTest_PHPUnit_Framework_Contr
      * Protected function used during testing to authenticate
      * the user ahead of any tests that require the user to be authenticated
      *
-     * @param $username String Username for the admin user
+     * @param $userName String Username for the admin user
      * @param $password String Password for the supplied account
      *
      * @return void
