@@ -1,0 +1,15 @@
+{
+    "name": "MageTest/Mage-Test",
+    "type": "magento-module",
+    "license":"OSL-3.0",
+    "description":"Lightweight module and library for testing Magento applications with PHPUnit",
+    "authors":[
+    {
+        "name":"Alistair Stead",
+        "email":"alistair@ibuildings.com"
+    }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
