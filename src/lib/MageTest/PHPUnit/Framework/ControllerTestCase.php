@@ -1,21 +1,32 @@
 <?php
 /**
- * Magento PHPUnit ControllerTestCase
+ * Mage-Test
  *
- * @package     MageTest_PHPUnit
- * @copyright   Copyright (c) 2011 Ibuildings. (http://www.ibuildings.com)
- * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- * @author      Alistair Stead <alistair@ibuildings.com>
- * @version     $Id$
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License, that is bundled with this
+ * package in the file LICENSE.
+ * It is also available through the world-wide-web at this URL:
+ *
+ * http://opensource.org/licenses/MIT
+ *
+ * If you did not receive a copy of the license and are unable to obtain it
+ * through the world-wide-web, please send an email
+ * to <magetest@sessiondigital.com> so we can send you a copy immediately.
+ *
+ * @category   MageTest
+ * @package    Mage-Test_MagentoExtension
+ *
+ * @copyright  Copyright (c) 2012-2013 MageTest team and contributors.
  */
 
 /**
  * MageTest_PHPUnit_Framework_ControllerTestCase
  *
- * @category    MageTest
- * @package     MageTest_PHPUnit
- * @subpackage  MageTest_PHPUnit_Framework
- * @uses        Zend_Test_PHPUnit_ControllerTestCase
+ * @category   MageTest
+ * @package    Mage-Test_MagentoExtension
+ *
+ * @author     MageTest team (https://github.com/MageTest/Mage-Unit/contributors)
  */
 abstract class MageTest_PHPUnit_Framework_ControllerTestCase
    extends Zend_Test_PHPUnit_ControllerTestCase
@@ -25,28 +36,28 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * undocumented class variable
      *
      * @var string
-     **/
+     */
     protected $_bootstrap;
     
     /**
      * Internal member variable that will be used to define which store will be used
      *
      * @var string
-     **/
+     */
     protected $_mageRunCode = '';
     
     /**
      * Internal member variabe that will be used to define if it is a store or the admin that will run
      *
      * @var string
-     **/
+     */
     protected $_mageRunType = 'store';
     
     /**
      * Internal member variable that will hold the additional options passed to Mage::app()
      *
      * @var array
-     **/
+     */
     protected $_options = array();
     
     /**
@@ -54,28 +65,28 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * during the request / response with the controller
      *
      * @var Zend_Mail
-     **/
+     */
     protected $_mail;
     
     /**
      * Internal registry of the original config values.
      *
      * @var array
-     **/
+     */
     protected $_originalConfigValues = array();
     
     /**
      * Internal registry of the new config values.
      *
      * @var array
-     **/
+     */
     protected $_newConfigValues = array();
     
     /**
      * Internal registry of the removed config values.
      *
      * @var array
-     **/
+     */
     protected $_removedConfigValues = array();
     
     /**
@@ -154,7 +165,6 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * and disables returning the response.
      *
      * @return void
-     * @author Alistair Stead
      */
     public function mageBootstrap()
     {
@@ -166,8 +176,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * undocumented function
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function getBootstrap()
     {
         if (is_null($this->_bootstrap)) {
@@ -230,8 +239,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * Reset the browser session and cookies
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function resetSession()
     {
         $_SESSION = array();
@@ -283,8 +291,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * by Magento during execution of the request
      *
      * @return Zend_Mail
-     * @author Alistair Stead
-     **/
+     */
     public function getResponseEmail()
     {
         if (null === $this->_mail) {
@@ -297,8 +304,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * Reset the responseMail generated during the request & response
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function resetResponseMail()
     {
         $this->_mail = null;
@@ -406,8 +412,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      *
      * @param $types
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public static function enableCache($types = null)
     {
         MageTest_Util_Cache::enable($types);
@@ -418,8 +423,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      *
      * @param $types
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public static function disableCache($types = null)
     {
         MageTest_Util_Cache::disable($types);
@@ -430,8 +434,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      *
      * @param $types
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public static function cleanCache($types = null)
     {
         MageTest_Util_Cache::clean($types);
@@ -441,8 +444,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * Entirely flush the cache within the system
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public static function flushCache()
     {
         MageTest_Util_Cache::flush();
@@ -458,8 +460,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * @param mixed $value
      * @param string $scope
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function setConfig($path, $value, $scope = null)
     {
         MageTest_Util_Config::set($path, $value, $scope = null);
@@ -475,8 +476,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * @param string $path
      * @param string $scope
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function removeConfig($path, $scope = null)
     {
         $configCollection = Mage::getModel('core/config_data')->getCollection();  
@@ -496,8 +496,7 @@ abstract class MageTest_PHPUnit_Framework_ControllerTestCase
      * Reset the Magento config to its original values.
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function resetConfig()
     {
         $config = Mage::getModel('core/config_data');

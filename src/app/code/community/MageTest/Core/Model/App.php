@@ -1,8 +1,33 @@
 <?php
+/**
+ * Mage-Test
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License, that is bundled with this
+ * package in the file LICENSE.
+ * It is also available through the world-wide-web at this URL:
+ *
+ * http://opensource.org/licenses/MIT
+ *
+ * If you did not receive a copy of the license and are unable to obtain it
+ * through the world-wide-web, please send an email
+ * to <magetest@sessiondigital.com> so we can send you a copy immediately.
+ *
+ * @category   MageTest
+ * @package    Mage-Test_MagentoExtension
+ *
+ * @copyright  Copyright (c) 2012-2013 MageTest team and contributors.
+ */
 
 /**
-*
-*/
+ * MageTest_Core_Model_App
+ *
+ * @category   MageTest
+ * @package    Mage-Test_MagentoExtension
+ *
+ * @author     MageTest team (https://github.com/MageTest/Mage-Test/contributors)
+ */
 class MageTest_Core_Model_App extends Mage_Core_Model_App
 {
     /**
@@ -33,8 +58,7 @@ class MageTest_Core_Model_App extends Mage_Core_Model_App
      *
      * @param Zend_Controller_Request_Abstract $request
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function setRequest(Zend_Controller_Request_Abstract $request)
     {
         $this->_request = $request;
@@ -59,8 +83,7 @@ class MageTest_Core_Model_App extends Mage_Core_Model_App
      *
      * @param Zend_Controller_Response_Abstract $response
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function setResponse(Zend_Controller_Response_Abstract $response)
     {
         $this->_response = $response;
@@ -87,8 +110,7 @@ class MageTest_Core_Model_App extends Mage_Core_Model_App
      * @param Zend_Mail $mail
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function setResponseEmail(Zend_Mail $mail)
     {
         $this->_mail = $mail;
@@ -98,8 +120,7 @@ class MageTest_Core_Model_App extends Mage_Core_Model_App
      * Retrieve the response mail object
      *
      * @return Zend_Mail
-     * @author Alistair Stead
-     **/
+     */
     public function getResponseEmail()
     {
         if (empty($this->_mail)) {

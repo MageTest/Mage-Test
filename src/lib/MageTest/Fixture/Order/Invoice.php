@@ -1,29 +1,40 @@
 <?php
 /**
- * Magento Unit Test Object factory for Order Invoice
+ * Mage-Test
  *
- * @category   Integration Tests
- * @package    Ibuildings_Mage_Test
- * @copyright  Copyright (c) 2010 Ibuildings
- * @version    $Id$
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License, that is bundled with this
+ * package in the file LICENSE.
+ * It is also available through the world-wide-web at this URL:
+ *
+ * http://opensource.org/licenses/MIT
+ *
+ * If you did not receive a copy of the license and are unable to obtain it
+ * through the world-wide-web, please send an email
+ * to <magetest@sessiondigital.com> so we can send you a copy immediately.
+ *
+ * @category   MageTest
+ * @package    Mage-Test_MagentoExtension
+ *
+ * @copyright  Copyright (c) 2012-2013 MageTest team and contributors.
  */
 
 /**
- * Ibuildings_Mage_Test_Factory_Order_Invoice
+ * MageTest_Fixture_Order_Invoice
  *
- * @category   Integration Tests
- * @package    Ibuildings_Mage_Test
- * @subpackage Ibuildings_Mage_Test_Factory
- * @author Alistair Stead
+ * @category   MageTest
+ * @package    Mage-Test_MagentoExtension
+ *
+ * @author     MageTest team (https://github.com/MageTest/Mage-Test/contributors)
  */
 class MageTest_Fixture_Order_Invoice extends MageTest_Fixture
 {
     /**
-    * Helper funtion to constuct an invoice to be used for testing
-    *
-    * @return Test_Helper_Order_Invoice
-    * @author Alistair Stead
-    **/
+     * Helper funtion to constuct an invoice to be used for testing
+     *
+     * @return Test_Helper_Order_Invoice
+     */
     public static function create(array $data = array())
     {
         $_data = array(
