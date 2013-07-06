@@ -5,7 +5,7 @@ class MageTest_BootstrapTest extends PHPUnit_Framework_TestCase
     /**
      * Internal member variable of the bootstrap under test
      *
-     * @var Ibuildings_MageTest_PHPUnit_Bootstrap
+     * @var MageTest_Bootstrap
      **/
     protected $_bootstrap;
 
@@ -13,21 +13,19 @@ class MageTest_BootstrapTest extends PHPUnit_Framework_TestCase
      * Setup fixtures and dependencies
      *
      * @return void
-     * @author Alistair Stead
      **/
     public function setUp()
     {
         parent::setUp();
         // Bootstrap Mage in the same way as during testing
-        $this->_bootstrap = new MageTest_Bootstrap;
+        $this->_bootstrap = new MageTest_Bootstrap();
     }
 
     /**
      * Tear down fixtures and dependencies
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function tearDown()
     {
         unset($this->_bootstrap);
@@ -39,7 +37,8 @@ class MageTest_BootstrapTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($this->_bootstrap->isValid(), 'The bootstrap is unable to confirm Magento is installed');
     }
 
-    public function testInitWillOverrideRequestAndResponse() {
+    public function testInitWillOverrideRequestAndResponse()
+    {
         $this->_bootstrap->init();
         $this->assertInstanceOf(
             'MageTest_Controller_Request_HttpTestCase',
@@ -53,7 +52,8 @@ class MageTest_BootstrapTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function testAppHasAdditionalMethods() {
+    public function testAppHasAdditionalMethods()
+    {
         $appReflection = new ReflectionClass(Mage::app());
         $this->assertTrue($appReflection->hasMethod('setRequest'), 'app does not have setRequest method');
         $this->assertTrue($appReflection->hasMethod('setResponse'), 'app does not have setResponse method');

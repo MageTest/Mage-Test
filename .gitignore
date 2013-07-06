@@ -1,1 +1,9 @@
+DS_Store
 build/*
+.idea
+tags
+/vendor
+composer.lock
+/public
+/bin/modman
+/bin/magerun.phar

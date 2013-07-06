@@ -6,15 +6,14 @@ class SessionTest extends PHPUnit_Framework_TestCase
      * Member variable that will hold session object
      *
      * @var Mage_Admin_Model_Session
-     **/
+     */
     protected $_session;
 
     /**
      * Setup fixtures and dependencies
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function setUp()
     {
         parent::setUp();
@@ -29,8 +28,7 @@ class SessionTest extends PHPUnit_Framework_TestCase
      * Tear down fixtures and dependencies
      *
      * @return void
-     * @author Alistair Stead
-     **/
+     */
     public function tearDown()
     {
         parent::tearDown();
@@ -40,8 +38,6 @@ class SessionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * mageAdminSessionHasBeenPatched
-     * @author Alistair Stead
      * @test
      */
     public function mageAdminSessionHasBeenPatched()
@@ -51,18 +47,14 @@ class SessionTest extends PHPUnit_Framework_TestCase
             $this->_session,
             "The session is of the wrong class"
         );
-    } // mageAdminSessionHasBeenPatched
+    }
 
     /**
-     * sessionLoginDoesNotCallCoreHeaderFunction
-     * @author Alistair Stead
      * @test
      */
     public function sessionLoginDoesNotCallCoreHeaderFunction()
     {
-        // Mage_Admin_Model_Session should not call header();
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    } // sessionLoginDoesNotCallCoreHeaderFunction
+        Mage::getModel('admin/session')->login('admin', 'MageTest123');
+        $this->assertEmpty(headers_list());
+    }
 }

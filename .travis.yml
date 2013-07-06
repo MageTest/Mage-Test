@@ -1,0 +1,33 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+language: php
+
+# list any PHP version you want to test against
+php:
+  # using major version aliases
+
+  # aliased to a recent 5.3.x version
+  - 5.3
+  # aliased to a recent 5.4.x version
+  #- 5.4
+  ## aliases to a recent 5.5.x version
+  #- 5.5
+
+env:
+  #- DB="tests/phpunit.xml.dist"
+
+before_script:
+  - composer selfupdate
+  - composer update
+  - bin/ci.sh
+  - cd $TRAVIS_BUILD_DIR/public
+
+# omitting "script:" will default to phpunit
+# use the $DB env variable to determine the phpunit.xml to use
+script:
+    - phpunit
+
+# configure notifications (email, IRC, campfire etc)
+notifications:
+  email: 
+      - "aaron@aaronbonner.io"
+  irc: "chat.freenode.net#magetest"

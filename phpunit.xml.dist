@@ -3,10 +3,11 @@
     <testsuite name="Mage Test Tests">
         <directory suffix="Test.php">tests</directory>
     </testsuite>
+    <!--
     <testsuite name="Magento Tests">
         <directory suffix="Test.php">src/tests</directory>
     </testsuite>
-
+    -->
     <!-- <logging>
         <log type="coverage-html" target="build/coverage" title="Mage Test Coverage"
             charset="UTF-8" yui="true" highlight="true"

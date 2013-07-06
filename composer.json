@@ -1,15 +1,38 @@
 {
-    "name": "MageTest/Mage-Test",
-    "type": "magento-module",
-    "license":"OSL-3.0",
-    "description":"Lightweight module and library for testing Magento applications with PHPUnit",
-    "authors":[
-    {
-        "name":"Alistair Stead",
-        "email":"alistair@ibuildings.com"
-    }
-    ],
+    "name": "magetest/magento-phpunit-extension",
+    "type": "library",
+    "license":"MIT",
+    "description":"Magento PHPUnit extension, a lightweight module and library for testing Magento applications with PHPUnit",
+    "keywords": ["TDD", "unit", "unit-testing", "tests", "testing"],
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.firegento.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "magento-root-dir": "./"
+    },
+    "minimum-stability": "dev",
+    "authors":[
+        {
+            "name":"Alistair Stead",
+            "email":"alistair@sessiondigital.com"
+        },
+        {
+            "name":"Aaron Bonner",
+            "email":"aaron@aaronbonner.io",
+            "homepage":"http://aaronbonner.io"
+        },
+        {
+            "name": "Other contributors",
+            "homepage":"https://github.com/MageTest/Mage-Test/contributors"
+        }
+    ]
 }

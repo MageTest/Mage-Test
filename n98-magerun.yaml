@@ -1,0 +1,10 @@
+commands:
+  N98\Magento\Command\Installer\InstallCommand:
+    installation:
+      defaults:
+        currency: USD
+        admin_username: admin
+        admin_firstname: Mage
+        admin_lastname: Test
+        admin_password: MageTest123
+        admin_email: magetest@example.com
