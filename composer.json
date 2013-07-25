@@ -1,6 +1,6 @@
 {
     "name": "magetest/magento-phpunit-extension",
-    "type": "library",
+    "type": "magento-module",
     "license":"MIT",
     "description":"Magento PHPUnit extension, a lightweight module and library for testing Magento applications with PHPUnit",
     "keywords": ["TDD", "unit", "unit-testing", "tests", "testing"],
