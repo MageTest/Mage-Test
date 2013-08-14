@@ -36,6 +36,10 @@ abstract class MageTest_PHPUnit_Framework_TestCase extends PHPUnit_Framework_Tes
 
         $bootstrap = new MageTest_Bootstrap;
         $bootstrap->init();
+        $bootstrap->app()->loadAreaPart(
+            Mage_Core_Model_App_Area::AREA_GLOBAL,
+            Mage_Core_Model_App_Area::PART_EVENTS
+        );
     }
 
     /**
